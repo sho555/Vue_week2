@@ -23,12 +23,13 @@ const app = {
       });
     },
     getData() {
-
+      
       axios.get(`https://${this.apiUrl}/v2/api/${this.apiPath}/admin/products/all`)
         .then((res) => {
-          console.log(res.data.products)
           this.products = res.data.products;
-  
+          console.log(this.products)
+          console.log(products.length)
+
         })
         .catch((err) => {
           alert("can't getData")
