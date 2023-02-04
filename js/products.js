@@ -19,12 +19,13 @@ const app = {
         
       })
       .catch((err) => {
+        window.location = 'login.html';
         alert("尚未登入");
       });
     },
     getData() {
       
-      axios.get(`https://${this.apiUrl}/v2/api/${this.apiPath}/admin/products/all`)
+      axios.get(`https://${this.apiUrl}/v2/api/${this.apiPath}/admin/products`)
         .then((res) => {
           this.products = res.data.products;
 
